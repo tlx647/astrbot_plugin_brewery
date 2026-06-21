@@ -1,0 +1,476 @@
+{
+  "economy": {
+    "description": "经济系统配置",
+    "type": "object",
+    "items": {
+      "start_coins": {
+        "description": "新用户初始金币",
+        "type": "int",
+        "default": 1000,
+        "hint": "用户首次使用时获得的金币数量"
+      },
+      "daily_sign_coins": {
+        "description": "每日签到金币",
+        "type": "int",
+        "default": 50
+      }
+    }
+  },
+  "materials": {
+    "description": "材料市场配置",
+    "type": "object",
+    "items": {
+      "sorghum": {
+        "description": "高粱",
+        "type": "int",
+        "default": 10,
+        "hint": "单价/份"
+      },
+      "rice": {
+        "description": "大米",
+        "type": "int",
+        "default": 8
+      },
+      "wheat": {
+        "description": "小麦",
+        "type": "int",
+        "default": 12
+      },
+      "corn": {
+        "description": "玉米",
+        "type": "int",
+        "default": 9
+      },
+      "grape": {
+        "description": "葡萄",
+        "type": "int",
+        "default": 15
+      },
+      "barley": {
+        "description": "大麦",
+        "type": "int",
+        "default": 11
+      },
+      "yeast": {
+        "description": "酒曲/酵母",
+        "type": "int",
+        "default": 5
+      },
+      "water": {
+        "description": "泉水",
+        "type": "int",
+        "default": 3
+      }
+    }
+  },
+  "recipes": {
+    "description": "酒配方配置",
+    "type": "object",
+    "items": {
+      "chinese_liquors": {
+        "description": "国酒配方",
+        "type": "object",
+        "items": {
+          "maotai_flavor": {
+            "description": "酱香陈酿",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "酱香陈酿"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 5, "description": "高粱" },
+                  "rice": { "type": "int", "default": 0, "description": "大米" },
+                  "wheat": { "type": "int", "default": 3, "description": "小麦" },
+                  "corn": { "type": "int", "default": 0, "description": "玉米" },
+                  "grape": { "type": "int", "default": 0, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 0, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 2, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 5, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 60
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 200
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 1,
+                "hint": "1-5星"
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 0.5,
+                "hint": "每陈酿周期增加的星级"
+              }
+            }
+          },
+          "rice_wine": {
+            "description": "绍兴黄酒",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "绍兴黄酒"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 0, "description": "高粱" },
+                  "rice": { "type": "int", "default": 5, "description": "大米" },
+                  "wheat": { "type": "int", "default": 0, "description": "小麦" },
+                  "corn": { "type": "int", "default": 0, "description": "玉米" },
+                  "grape": { "type": "int", "default": 0, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 0, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 1, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 4, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 45
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 120
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 1
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 0.3
+              }
+            }
+          },
+          "qingxiang_fenjiu": {
+            "description": "清香汾酒",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "清香汾酒"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 4, "description": "高粱" },
+                  "rice": { "type": "int", "default": 0, "description": "大米" },
+                  "wheat": { "type": "int", "default": 0, "description": "小麦" },
+                  "corn": { "type": "int", "default": 0, "description": "玉米" },
+                  "grape": { "type": "int", "default": 0, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 3, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 2, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 4, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 50
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 160
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 1
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 0.4
+              }
+            }
+          },
+          "nongxiang_laojiao": {
+            "description": "浓香老窖",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "浓香老窖"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 3, "description": "高粱" },
+                  "rice": { "type": "int", "default": 2, "description": "大米" },
+                  "wheat": { "type": "int", "default": 2, "description": "小麦" },
+                  "corn": { "type": "int", "default": 2, "description": "玉米" },
+                  "grape": { "type": "int", "default": 0, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 0, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 2, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 5, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 70
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 240
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int", "default": 2
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 0.6
+              }
+            }
+          }
+        }
+      },
+      "western_liquors": {
+        "description": "洋酒配方",
+        "type": "object",
+        "items": {
+          "red_wine": {
+            "description": "庄园红葡萄酒",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "庄园红葡萄酒"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 0, "description": "高粱" },
+                  "rice": { "type": "int", "default": 0, "description": "大米" },
+                  "wheat": { "type": "int", "default": 0, "description": "小麦" },
+                  "corn": { "type": "int", "default": 0, "description": "玉米" },
+                  "grape": { "type": "int", "default": 8, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 0, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 1, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 2, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 90
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 300
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 2
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 0.8
+              }
+            }
+          },
+          "whiskey": {
+            "description": "麦芽威士忌",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "麦芽威士忌"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 0, "description": "高粱" },
+                  "rice": { "type": "int", "default": 0, "description": "大米" },
+                  "wheat": { "type": "int", "default": 0, "description": "小麦" },
+                  "corn": { "type": "int", "default": 2, "description": "玉米" },
+                  "grape": { "type": "int", "default": 0, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 6, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 2, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 4, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 120
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 450
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 2
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 1.0
+              }
+            }
+          },
+          "oak_brandy": {
+            "description": "橡木白兰地",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "橡木白兰地"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 0, "description": "高粱" },
+                  "rice": { "type": "int", "default": 0, "description": "大米" },
+                  "wheat": { "type": "int", "default": 0, "description": "小麦" },
+                  "corn": { "type": "int", "default": 0, "description": "玉米" },
+                  "grape": { "type": "int", "default": 10, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 0, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 2, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 3, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 150
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 520
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 3
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 1.2
+              }
+            }
+          },
+          "grain_vodka": {
+            "description": "谷物伏特加",
+            "type": "object",
+            "items": {
+              "name": {
+                "description": "酒名",
+                "type": "string",
+                "default": "谷物伏特加"
+              },
+              "materials": {
+                "description": "配方材料",
+                "type": "object",
+                "hint": "材料对应所需份数，0代表不需要该材料",
+                "items": {
+                  "sorghum": { "type": "int", "default": 0, "description": "高粱" },
+                  "rice": { "type": "int", "default": 0, "description": "大米" },
+                  "wheat": { "type": "int", "default": 4, "description": "小麦" },
+                  "corn": { "type": "int", "default": 4, "description": "玉米" },
+                  "grape": { "type": "int", "default": 0, "description": "葡萄" },
+                  "barley": { "type": "int", "default": 0, "description": "大麦" },
+                  "yeast": { "type": "int", "default": 2, "description": "酒曲/酵母" },
+                  "water": { "type": "int", "default": 5, "description": "泉水" }
+                }
+              },
+              "brew_time": {
+                "description": "酿造时间(秒)",
+                "type": "int",
+                "default": 100
+              },
+              "base_price": {
+                "description": "基础售价",
+                "type": "int",
+                "default": 380
+              },
+              "base_quality": {
+                "description": "基础品质",
+                "type": "int",
+                "default": 2
+              },
+              "aging_bonus": {
+                "description": "陈酿品质加成",
+                "type": "float",
+                "default": 0.7
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "aging": {
+    "description": "陈酿系统配置",
+    "type": "object",
+    "items": {
+      "aging_cycle": {
+        "description": "陈酿周期(秒)",
+        "type": "int",
+        "default": 300,
+        "hint": "每经过多少秒计算一次陈酿加成"
+      },
+      "max_quality": {
+        "description": "最高品质星级",
+        "type": "int",
+        "default": 5,
+        "hint": "酒的最高星级上限"
+      },
+      "cellar_slots": {
+        "description": "默认酒窖槽位",
+        "type": "int",
+        "default": 3
+      }
+    }
+  }
+}

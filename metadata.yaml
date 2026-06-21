@@ -1,0 +1,6 @@
+name: astrbot_plugin_brewery
+author: tai647
+version: 1.0.0
+description: 沉浸式酿酒系统插件，支持国酒洋酒配方酿造、材料市场、酒庄陈酿、金币经济与排行榜
+display_name: 酿酒大师
+short_desc: 酿造传世美酒，经营你的酒庄

@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "display_name": "Brewery Master",
+    "short_desc": "Immersive brewing system, craft legendary wines",
+    "desc": "Complete brewing economy system with Chinese & Western recipes, material market, cellar aging, coins economy and rankings"
+  },
+  "pages": {
+    "manager": {
+      "title": "Brewery Manager",
+      "description": "Manage brewery system configuration and data"
+    }
+  }
+}
